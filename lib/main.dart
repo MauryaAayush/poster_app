@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poster_app/views/splash_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,11 @@ class MyApp extends StatelessWidget {
 
         useMaterial3: true,
       ),
-      // home: ,
+     initialRoute: '/',
+
+      routes: {
+          '/' : (context) => Splash_Screen(),
+      },
     );
   }
 }
