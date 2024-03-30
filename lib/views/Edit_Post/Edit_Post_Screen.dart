@@ -65,7 +65,7 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
                         topRight: Radius.elliptical(200, 200))),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 35,
                     ),
                     Text(
