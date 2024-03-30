@@ -129,6 +129,4 @@ List festivalList=[
     'Color' :Colors.amber,
   },
 
-
-
 ];
