@@ -69,14 +69,14 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
                       height: 35,
                     ),
                     Text(
-                      'Festi Vals',
+                      'FestiVals',
                       style: GoogleFonts.lobster(
                         fontSize: 35,
                         color: Colors.white,
                         letterSpacing: 2,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
