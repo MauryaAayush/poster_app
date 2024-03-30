@@ -11,7 +11,7 @@ Widget festival(Color color, String name, String name2, String img, int index,
   return InkWell(
     onTap: () {
       postviewIndex = index;
-      Navigator.of(context).pushNamed('/poster');
+      // Navigator.of(context).pushNamed('/poster');
     },
     child: Padding(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
@@ -25,7 +25,7 @@ Widget festival(Color color, String name, String name2, String img, int index,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: width*0.63,
+              width: width * 0.63,
               child: Padding(
                 padding: const EdgeInsets.only(left: 18),
                 child: Column(
@@ -37,7 +37,8 @@ Widget festival(Color color, String name, String name2, String img, int index,
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.white)),
-                    Text(name2,
+                    Text(
+                      name2,
                       overflow: TextOverflow.clip,
                       style: TextStyle(
                           fontSize: 16,
@@ -51,12 +52,19 @@ Widget festival(Color color, String name, String name2, String img, int index,
             Padding(
               padding: const EdgeInsets.only(right: 15),
               child: Container(
-                height: 60,
-                width: 60,
+                height: 65,
+                width: 65,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.black,
-                    border: Border.all(color: Colors.white)),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 2,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.white, blurRadius: 10, spreadRadius: 2)
+                    ]),
                 child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(50)),
                     child: Image.asset(

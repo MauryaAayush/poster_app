@@ -26,7 +26,7 @@ List festivalList=[
   {
     'Festival name' : 'Diwali',
     'Text': 'Create your Diwali Templates',
-    'Images' : 'asset/img/festival_img/diwali.webp',
+    'Images' : 'assets/images/4.jpg',
     'Color' : Colors.purple,
   },
 
