@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       routes: {
           '/' : (context) => const Splash_Screen(),
           '/second' : (context) => const Home_Screen(),
-          '/third' : (context) => Edit_POst_Screen(),
+          '/third' : (context) => const Edit_POst_Screen(),
       },
     );
   }
