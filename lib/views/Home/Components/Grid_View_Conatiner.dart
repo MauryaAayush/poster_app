@@ -24,8 +24,8 @@ Widget festival1(Color color, String name, String name2, String img, int index,
               height: 15,
             ),
             Container(
-              height: height*0.1,
-              width: width*0.1,
+              height: height*0.11,
+              width: width*0.23,
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black,
