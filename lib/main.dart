@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:poster_app/views/Edit_Post/Edit_Post_Screen.dart';
 import 'package:poster_app/views/splash_Screen.dart';
 
 void main() {
@@ -20,12 +21,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+
         useMaterial3: true,
       ),
-     initialRoute: '/',
+     initialRoute: '/third',
 
       routes: {
           '/' : (context) => Splash_Screen(),
+          '/third' : (context) => Edit_POst_Screen(),
       },
     );
   }

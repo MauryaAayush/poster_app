@@ -24,7 +24,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
          decoration: BoxDecoration(
            image: DecorationImage(
              image: AssetImage('assets/gifs/splash.gif'),
-             fit: BoxFit.contain
+             fit: BoxFit.fill
            )
          ),
        ),
