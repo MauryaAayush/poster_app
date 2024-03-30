@@ -14,15 +14,27 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Color(0xff1d243b),
         ),
         body: Column(
           children: [
+
             Expanded(
               child: Container(
-                child: Column(
+                child: Stack(
                   children: [
-                    Image.asset(''),
+
+                  Container(
+                  height: 180,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Color(0xff1d243b),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.elliptical(200, 200),
+                          bottomRight: Radius.elliptical(200, 200))),
+                  ),
+
+                    // Image.asset(''),
                   ],
                 ),
               ),

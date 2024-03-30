@@ -5,7 +5,7 @@ import 'package:poster_app/views/splash_Screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.blue
+    statusBarColor: Color(0xff1d243b)
   ));
   runApp(const MyApp());
 }
