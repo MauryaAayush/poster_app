@@ -58,7 +58,7 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
               child: Container(
                 height: 180,
                 alignment: Alignment.center,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Color(0xff1d243b),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.elliptical(200, 200),
