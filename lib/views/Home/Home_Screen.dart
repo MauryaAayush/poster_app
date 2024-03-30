@@ -15,7 +15,7 @@ class Home_Screen extends StatefulWidget {
 class _Home_ScreenState extends State<Home_Screen> {
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
     // double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -51,9 +51,31 @@ class _Home_ScreenState extends State<Home_Screen> {
           ],
         ),
       ),
-      body: Center(child: (isfestival)?List_view():Grid_View()),
+      body: Center(
+          child: Stack(
+            children: [
+              Column(
+                      children: [
+
+              Container(
+                height: height*0.22,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                    color: Color(0xff1d243b),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.elliptical(200, 200),
+                        bottomRight: Radius.elliptical(200, 200))),
+              ),
+
+
+                      ],
+                    ),
+              (isfestival)?List_view():Grid_View() ,
+            ],
+          )),
     );
   }
 }
 
 
+//
