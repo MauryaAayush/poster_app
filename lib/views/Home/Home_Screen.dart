@@ -18,6 +18,7 @@ class _Home_ScreenState extends State<Home_Screen> {
     // double height = MediaQuery.of(context).size.height;
     // double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
         child: AppBar(
@@ -39,7 +40,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                   isfestival = !isfestival;
                 });
               },
-              child: Icon((!isfestival)?Icons.filter_list:
+              child: Icon((!isfestival)?Icons.list_outlined:
               Icons.grid_view,
                 color: Colors.white,
               ),

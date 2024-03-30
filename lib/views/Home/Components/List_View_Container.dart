@@ -14,7 +14,7 @@ Widget festival(Color color, String name, String name2, String img, int index,
       Navigator.of(context).pushNamed('/poster');
     },
     child: Padding(
-      padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+      padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
       child: Container(
         height: height * 0.12,
         decoration: BoxDecoration(
