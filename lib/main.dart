@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
 
         useMaterial3: true,
       ),
-     initialRoute: '/third',
+     initialRoute: '/second',
 
       routes: {
-          '/' : (context) => Splash_Screen(),
+          '/' : (context) => const Splash_Screen(),
           '/second' : (context) => Home_Screen(),
           '/third' : (context) => Edit_POst_Screen(),
       },
