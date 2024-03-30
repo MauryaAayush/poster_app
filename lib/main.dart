@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:poster_app/views/Edit_Post/Edit_Post_Screen.dart';
+import 'package:poster_app/views/Home/Home_Screen.dart';
 import 'package:poster_app/views/splash_Screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Color(0xff1d243b)
+    statusBarColor: Color(0xff1d243b),
   ));
   runApp(const MyApp());
 }
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
 
       routes: {
           '/' : (context) => Splash_Screen(),
+          '/second' : (context) => Home_Screen(),
           '/third' : (context) => Edit_POst_Screen(),
       },
     );

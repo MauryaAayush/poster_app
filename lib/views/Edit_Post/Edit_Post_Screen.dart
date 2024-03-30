@@ -11,9 +11,14 @@ class Edit_POst_Screen extends StatefulWidget {
 class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
   @override
   Widget build(BuildContext context) {
+
+    double height = MediaQuery.of(context).size.height;
+    // double width = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+              // automaticallyImplyLeading: ,
           backgroundColor: Color(0xff1d243b),
         ),
         body: Column(
@@ -25,7 +30,7 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
                   children: [
 
                   Container(
-                  height: 180,
+                  height: height*0.2,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: Color(0xff1d243b),
@@ -34,6 +39,9 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
                           bottomRight: Radius.elliptical(200, 200))),
                   ),
 
+                    Container(
+
+                    )
                     // Image.asset(''),
                   ],
                 ),
