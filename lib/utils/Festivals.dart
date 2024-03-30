@@ -5,21 +5,21 @@ List festivalList=[
   {
     'Festival name' : 'Makar Sakranti',
     'Text': 'Create your Makar Sakranti Templates',
-    'Images' : 'asset/img/festival_img/makar_sankranti.jpg',
+    'Images' : 'assets/images/1.jpeg',
     'Color' :Colors.teal,
   },
 
   {
     'Festival name' : 'Karwa Chauth',
     'Text': 'Create your Karwa Chauth Templates',
-    'Images' : 'asset/img/festival_img/Karwa_Chauth.jpg',
+    'Images' : 'assets/images/2.jpeg',
     'Color' : Colors.green,
   },
 
   {
     'Festival name' : 'Maha Shivratri',
     'Text': 'Create your Maha Shivratri Templates',
-    'Images' : 'asset/img/festival_img/maha_shivratri.jpg',
+    'Images' :'assets/images/3.jpeg',
     'Color' : Colors.pink,
   },
 
@@ -34,26 +34,23 @@ List festivalList=[
   {
     'Festival name' : 'Raksha Bandhan',
     'Text': 'Create your Raksha Bandhan Templates',
-    'Images' : 'asset/img/festival_img/raksha_bandhan.jpg',
+    'Images' : 'assets/images/5.jpeg',
     'Color' : Colors.blue,
   },
-
 
 
   {
     'Festival name' : 'Basant Panchami',
     'Text': 'Create your Basant Panchami Templates',
-    'Images' : 'asset/img/festival_img/basant_panchami.jpg',
+    'Images' : 'assets/images/6.jpeg',
     'Color' : Colors.amber,
   },
-
-
 
 
   {
     'Festival name' : 'Navratri',
     'Text': 'Create your Navratri Templates',
-    'Images' : 'asset/img/festival_img/navratri.jpg',
+    'Images' : 'assets/images/7.jpg',
     'Color' : Colors.red,
   },
 
@@ -61,7 +58,7 @@ List festivalList=[
   {
     'Festival name' : 'Holi',
     'Text': 'Create your holi Templates',
-    'Images' : 'asset/img/festival_img/holi.jpg',
+    'Images' : 'assets/images/8.jpeg',
     'Color' : Colors.teal,
   },
 
@@ -69,7 +66,7 @@ List festivalList=[
   {
     'Festival name' : 'Bhai dhuj',
     'Text': 'Create your Bhai dhuj Templates',
-    'Images' : 'asset/img/festival_img/Bhai_dhuj.jpg',
+    'Images' : 'assets/images/9.jpeg',
     'Color' : Colors.pink,
   },
 
@@ -77,7 +74,7 @@ List festivalList=[
   {
     'Festival name' : 'Ganesh Chaturthi',
     'Text': 'Create your Ganesh Chaturthi Templates',
-    'Images' : 'asset/img/festival_img/ganesh.jpg',
+    'Images' : 'assets/images/10.jpeg',
     'Color' : Colors.amber,
   },
 
@@ -85,31 +82,31 @@ List festivalList=[
   {
     'Festival name' : 'Independence Day',
     'Text': 'Create your Independence Day Templates',
-    'Images' : 'asset/img/festival_img/day.jpg',
-    'Color' : Colors.purple,
+    'Images' : 'assets/images/11.jpeg',
+    'Color' : Colors.deepOrange,
   },
 
 
   {
     'Festival name' : 'Republic Day',
     'Text': 'Create your Republic Day Templates',
-    'Images' : 'asset/img/festival_img/Republic_Day.jpg',
-    'Color' : Colors.deepPurple,
+    'Images' : 'assets/images/12.jpeg',
+    'Color' : Colors.green,
   },
 
 
   {
     'Festival name' : 'Krishna Janmashtami',
     'Text': 'Create your Krishna Janmashtami Templates',
-    'Images' : 'asset/img/festival_img/Janmashtami.jpg',
-    'Color' : Colors.green,
+    'Images' : 'assets/images/13.jpeg',
+    'Color' : Colors.deepPurple,
   },
 
 
   {
     'Festival name' : 'Dussera',
     'Text': 'Create your Dussera Templates',
-    'Images' : 'asset/img/festival_img/Dussera.jpg',
+    'Images' : 'assets/images/14.jpeg',
     'Color' : Colors.blue,
   },
 
@@ -117,7 +114,7 @@ List festivalList=[
   {
     'Festival name' : 'Ram Navami',
     'Text': 'Create your Ram Navami Templates',
-    'Images' : 'asset/img/festival_img/Ram_Navami.jpg',
+    'Images' :'assets/images/15.jpeg',
     'Color' : Colors.teal,
   },
 
@@ -125,7 +122,7 @@ List festivalList=[
   {
     'Festival name' : 'Saraswati Pooj',
     'Text': 'Create your Saraswati pooja Templates',
-    'Images' : 'asset/img/festival_img/Saraswati_Pooj.jpg',
+    'Images' : 'assets/images/16.jpeg',
     'Color' :Colors.amber,
   },
 
