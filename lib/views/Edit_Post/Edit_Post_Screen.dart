@@ -19,32 +19,29 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
       child: Scaffold(
         appBar: AppBar(
               // automaticallyImplyLeading: ,
-          backgroundColor: Color(0xff1d243b),
+          backgroundColor: const Color(0xff1d243b),
         ),
         body: Column(
           children: [
 
             Expanded(
-              child: Container(
-                child: Stack(
-                  children: [
+              child: Stack(
+                children: [
+                Container(
+                height: height*0.2,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                    color: Color(0xff1d243b),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.elliptical(200, 200),
+                        bottomRight: Radius.elliptical(200, 200))),
+                ),
 
                   Container(
-                  height: height*0.2,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff1d243b),
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.elliptical(200, 200),
-                          bottomRight: Radius.elliptical(200, 200))),
-                  ),
 
-                    Container(
-
-                    )
-                    // Image.asset(''),
-                  ],
-                ),
+                  )
+                  // Image.asset(''),
+                ],
               ),
             ),
             Container(
