@@ -19,7 +19,7 @@ class _Home_ScreenState extends State<Home_Screen> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
         child: AppBar(
-          shadowColor: Color(0xff1c2438),
+          shadowColor: const Color(0xff1c2438),
           centerTitle: true,
           title: Text(
             'Festy',
@@ -29,7 +29,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               letterSpacing: 2,
             ),
           ),
-          backgroundColor: Color(0xff1c2438),
+          backgroundColor: const Color(0xff1c2438),
           actions: [
             InkWell(
               onTap: () {
