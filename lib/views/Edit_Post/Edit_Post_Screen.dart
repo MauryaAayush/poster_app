@@ -22,7 +22,7 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
         appBar: AppBar(
           // automaticallyImplyLeading: ,
           foregroundColor: Colors.white ,
-          backgroundColor:  Color(0xff1d243b),
+          backgroundColor:  const Color(0xff1d243b),
 
           actions: [
 
