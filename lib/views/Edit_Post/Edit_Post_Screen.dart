@@ -66,7 +66,7 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
                         fit: BoxFit.cover,
                       )),
 
-                  // Edit conatiner
+                  // Edit container
                   Container(
                     alignment: Alignment.center,
                     margin: EdgeInsets.fromLTRB(width*0.05, height*0.45, width*0.05, height*0),
