@@ -9,7 +9,7 @@ Widget festival1(Color color, String name, String name2, String img, int index,
   return InkWell(
     onTap: () {
       postviewIndex = index;
-      Navigator.of(context).pushNamed('/poster');
+      Navigator.of(context).pushNamed('/third');
     },
     child: Padding(
       padding: const EdgeInsets.all(8.0),
