@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/Festivals.dart';
+import '../../../utils/festivals.dart';
 import 'Grid_View_Conatiner.dart';
 
 GridView Grid_View() {

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../utils/Festivals.dart';
+import '../../../utils/festivals.dart';
 import 'List_View_Container.dart';
 
 Widget List_view() {
