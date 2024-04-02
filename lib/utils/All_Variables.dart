@@ -5,7 +5,7 @@ bool isImageandColor =true;
 
 
 int postviewIndex = 0;
-int editindex = 0;
+int posteditindex = 0;
 int backgroungindex = 0;
 int backgroundcolorindex = 0;
 

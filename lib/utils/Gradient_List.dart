@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'All_Variables.dart';
 
 
-List colorgrid = [
+List gradient_List = [
   color,
   [Color(0xffB3C8CF), Color(0xffBED7DC), Color(0xffF1EEDC), Color(0xffE5DDC5)],
   [Color(0xff49243E), Color(0xff704264), Color(0xffBB8493), Color(0xffDBAFA0)],
