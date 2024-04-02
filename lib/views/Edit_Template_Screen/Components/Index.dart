@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/All_Variables.dart';
+
 Container Index_one({required BuildContext context}) {
   return Container(
     height: 220,
@@ -19,7 +21,7 @@ Container Index_one({required BuildContext context}) {
             InkWell(
               onTap: () {
 
-                editindex =4;
+                editindex = 4;
               },
               child: Container(
                 padding: EdgeInsets.all(10),
@@ -39,7 +41,7 @@ Container Index_one({required BuildContext context}) {
             ),
             InkWell(
               onTap: () {
-                editindex =5;
+                editindex = 5;
               },
               child: Container(
                 padding: EdgeInsets.all(10),

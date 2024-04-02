@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/All_Variables.dart';
+import '../../utils/Gradient_List.dart';
+import '../../utils/festivals.dart';
+
 
 class edit_template_screen extends StatefulWidget {
   const edit_template_screen({super.key});
@@ -252,16 +256,16 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                 content: Container(
                                   height: 500,
                                   width: 300,
-                                  child: ColorPicker(
-                                    color: color,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        color =value;
-                                        isImageandColor = false;
-                                      });
-                                    },
-                                    initialPicker: Picker.paletteHue,
-                                  ),
+                                  // child: ColorPicker(
+                                  //   color: color,
+                                  //   onChanged: (value) {
+                                  //     setState(() {
+                                  //       color =value;
+                                  //       isImageandColor = false;
+                                  //     });
+                                  //   },
+                                  //   initialPicker: Picker.paletteHue,
+                                  // ),
                                 ),
                                 actions: [
                                   InkWell(onTap: () {
