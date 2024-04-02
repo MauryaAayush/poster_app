@@ -279,7 +279,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                           size: 50,
                         ),
                       )
-                          : null,
+                          : Container(),
                     ),
                   ),
                 ),
