@@ -17,62 +17,64 @@ class _Home_ScreenState extends State<Home_Screen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     // double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(65.0),
-        child: AppBar(
-          shadowColor: const Color(0xff1c2438),
-          centerTitle: true,
-          title: Text(
-            'Festy',
-            style: GoogleFonts.lobster(
-              fontSize: 35,
-              color: Colors.white,
-              letterSpacing: 2,
-            ),
-          ),
-          backgroundColor: const Color(0xff1c2438),
-          actions: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  isfestival = !isfestival;
-                });
-              },
-              child: Icon((!isfestival)?Icons.list_outlined:
-              Icons.grid_view,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(65.0),
+          child: AppBar(
+            shadowColor: const Color(0xff1c2438),
+            centerTitle: true,
+            title: Text(
+              'Festy',
+              style: GoogleFonts.lobster(
+                fontSize: 35,
                 color: Colors.white,
+                letterSpacing: 2,
               ),
             ),
-            SizedBox(
-              width: 15,
-            )
-          ],
-        ),
-      ),
-      body: Center(
-          child: Stack(
-            children: [
-              Column(
-                      children: [
-
-              Container(
-                height: height*0.22,
-                alignment: Alignment.center,
-                decoration: const BoxDecoration(
-                    color: Color(0xff1d243b),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.elliptical(200, 200),
-                        bottomRight: Radius.elliptical(200, 200))),
+            backgroundColor: const Color(0xff1c2438),
+            actions: [
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    isfestival = !isfestival;
+                  });
+                },
+                child: Icon((!isfestival)?Icons.list_outlined:
+                Icons.grid_view,
+                  color: Colors.white,
+                ),
               ),
-
-
-                      ],
-                    ),
-              (isfestival)?List_view():Grid_View() ,
+              SizedBox(
+                width: 15,
+              )
             ],
-          )),
+          ),
+        ),
+        body: Center(
+            child: Stack(
+              children: [
+                Column(
+                        children: [
+      
+                Container(
+                  height: height*0.22,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                      color: Color(0xff1d243b),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.elliptical(200, 200),
+                          bottomRight: Radius.elliptical(200, 200))),
+                ),
+      
+      
+                        ],
+                      ),
+                (isfestival)?List_view():Grid_View() ,
+              ],
+            )),
+      ),
     );
   }
 }

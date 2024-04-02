@@ -20,14 +20,19 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 
     return Scaffold(
      body: Center(
-       child: Container(
-         height: height*0.8,
-         width: width,
-         decoration: BoxDecoration(
-           image: DecorationImage(
-             image: AssetImage('assets/gifs/splash.gif'),
-             fit: BoxFit.fill
-           )
+       child: InkWell(
+         onTap: () {
+           Navigator.of(context).pushNamed('/second');
+         },
+         child: Container(
+           height: height*0.8,
+           width: width,
+           decoration: BoxDecoration(
+             image: DecorationImage(
+               image: AssetImage('assets/gifs/splash.gif'),
+               fit: BoxFit.fill
+             )
+           ),
          ),
        ),
      ),
