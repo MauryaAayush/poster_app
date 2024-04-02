@@ -7,6 +7,7 @@ import 'List_View_Container.dart';
 
 Widget List_view() {
   return ListView.builder(
+    physics: BouncingScrollPhysics(decelerationRate: ScrollDecelerationRate.normal),
     shrinkWrap: true,
       itemCount: festivalList.length,
     itemBuilder: (context, index) => festival(

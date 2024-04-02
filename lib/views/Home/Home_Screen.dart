@@ -30,7 +30,7 @@ class _Home_ScreenState extends State<Home_Screen> {
             'Festy',
             style: GoogleFonts.greatVibes(
               fontSize: 50,
-              fontWeight : FontWeight.w900,
+              fontWeight: FontWeight.w900,
               color: Colors.white,
               letterSpacing: 3,
             ),
@@ -43,8 +43,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                   isfestival = !isfestival;
                 });
               },
-              child: Icon((!isfestival)?Icons.list_outlined:
-              Icons.grid_view_rounded,
+              child: Icon(
+                (!isfestival) ? Icons.list_outlined : Icons.grid_view_rounded,
                 color: Colors.white,
                 size: 30,
               ),
@@ -57,12 +57,11 @@ class _Home_ScreenState extends State<Home_Screen> {
       ),
       body: Center(
           child: Stack(
+        children: [
+          Column(
             children: [
-              Column(
-                      children: [
-
               Container(
-                height: height*0.22,
+                height: height * 0.22,
                 alignment: Alignment.center,
                 decoration: const BoxDecoration(
                     color: Color(0xff1d243b),
@@ -70,16 +69,13 @@ class _Home_ScreenState extends State<Home_Screen> {
                         bottomLeft: Radius.elliptical(200, 200),
                         bottomRight: Radius.elliptical(200, 200))),
               ),
-
-
-                      ],
-                    ),
-              (isfestival)?List_view():Grid_View() ,
             ],
-          )),
+          ),
+          (isfestival) ? List_view() : Grid_View(),
+        ],
+      )),
     );
   }
 }
-
 
 //

@@ -5,6 +5,7 @@ import 'Grid_View_Conatiner.dart';
 
 GridView Grid_View() {
   return GridView.builder(
+    physics: BouncingScrollPhysics(decelerationRate: ScrollDecelerationRate.normal),
     itemCount: festivalList.length,
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
     itemBuilder: (context, index) => festival1(

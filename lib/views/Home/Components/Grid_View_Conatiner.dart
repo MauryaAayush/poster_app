@@ -12,7 +12,7 @@ Widget festival1(Color color, String name, String name2, String img, int index,
       Navigator.of(context).pushNamed('/third');
     },
     child: Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(10.0),
       child: Container(
         decoration: BoxDecoration(
           color: color,
@@ -48,12 +48,12 @@ Widget festival1(Color color, String name, String name2, String img, int index,
               height: 15,
             ),
             Container(
-              height: 40,
+              height: height*0.065,
               child: Text(name,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.clip,
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white)),
             ),
