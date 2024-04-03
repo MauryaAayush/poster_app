@@ -36,7 +36,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey,
+                            color:Color(0xff1c2438),
                             blurRadius: 0.5,
                             spreadRadius: 1,
                           )
