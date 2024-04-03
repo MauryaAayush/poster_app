@@ -146,7 +146,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                 ),
               ), //  For canvas  index = 0
               Container(
-                height: 220,
+                height: 230,
                 decoration: BoxDecoration(
                   color: Color(0xff1c2438),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -155,7 +155,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 15,
+                      height: 25,
                     ),
                     Text(
                       'Edit Your Text Here!!',
@@ -210,7 +210,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -276,11 +276,11 @@ class _edit_template_screenState extends State<edit_template_screen> {
               ), // for save index = 3
               background(), //4
               backgroundcolors(), //5
-              Container(), //6
+              // Container(), //6
             ],
           ),
           Container(
-            height: 70,
+            height: 80,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(

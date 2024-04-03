@@ -8,13 +8,13 @@ List festivalList=[
     'Images' : 'assets/images/1.jpeg',
     'Color' :Colors.teal,
     'image' : [
-      'assets/images/Diwali/diwali1.jpeg',
-      'assets/images/Diwali/diwali2.jpeg',
-      'assets/images/Diwali/diwali3.jpeg',
-      'assets/images/Diwali/diwali4.jpeg',
-      'assets/images/Diwali/diwali5.jpeg',
-      'assets/images/Diwali/diwali6.jpeg',
-      'assets/images/Diwali/diwali7.jpeg',
+      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S2.jpeg',
+      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S1.jpeg',
     ]
   },
 
