@@ -262,24 +262,19 @@ class _edit_template_screenState extends State<edit_template_screen> {
                     ),
                   ],
                 ),
-              ),
-              // For Text  index = 1
+              ), // For Text  index = 1
               Container(
                 alignment: Alignment.center,
                 height: 100,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.red
-                ),
+                decoration: BoxDecoration(color: Colors.red),
                 child: Text("Under proccessing"),
-              ),    // for share  index = 2
+              ), // for share  index = 2
               Container(
                 alignment: Alignment.center,
                 height: 100,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.teal
-                ),
+                decoration: BoxDecoration(color: Colors.teal),
                 child: Text("Under proccessing"),
               ), // for save index = 3
               background(), //4
@@ -538,44 +533,56 @@ class _edit_template_screenState extends State<edit_template_screen> {
           SizedBox(
             height: 25,
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(
-                festivalList[postviewIndex]['image'].length,
-                (index) => InkWell(
-                  onTap: () {
-                    setState(() {
-                      isImageandColor = true;
-                      backgroungindex = index;
-                    });
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 18.0),
-                    child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 0.5,
-                              spreadRadius: 1,
-                            )
-                          ],
-                          color: Colors.black,
-                        ),
-                        child: Image.asset(
-                          festivalList[postviewIndex]['image'][index],
-                          fit: BoxFit.cover,
-                        )),
-                  ),
-                ),
-              ),
-            ),
+          
+          Container(
+            height: 100,
+
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: festivalList[3]['image'].length,
+              itemBuilder: (context, index) => Card(
+              child: Image.asset(festivalList[3]['image'][index]),
+            ),),
           )
+          
         ],
       ),
     );
   }
 }
+// SingleChildScrollView(
+//   scrollDirection: Axis.horizontal,
+//   child: Row(
+//     children: List.generate(
+//       festivalList[postviewIndex]['image'].length,
+//           (index) => InkWell(
+//         onTap: () {
+//           setState(() {
+//             isImageandColor = true;
+//             backgroungindex = index;
+//           });
+//         },
+//         child: Padding(
+//           padding: const EdgeInsets.only(right: 18.0),
+//           child: Container(
+//               height: 100,
+//               width: 100,
+//               decoration: BoxDecoration(
+//                 boxShadow: [
+//                   BoxShadow(
+//                     color: Colors.grey,
+//                     blurRadius: 0.5,
+//                     spreadRadius: 1,
+//                   )
+//                 ],
+//                 color: Colors.black,
+//               ),
+//               child: Image.asset(
+//                 festivalList[postviewIndex]['image'][index],
+//                 fit: BoxFit.cover,
+//               )),
+//         ),
+//       ),
+//     ),
+//   ),
+// ),
