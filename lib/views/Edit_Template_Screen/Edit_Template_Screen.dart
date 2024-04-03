@@ -14,6 +14,8 @@ class edit_template_screen extends StatefulWidget {
 class _edit_template_screenState extends State<edit_template_screen> {
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
@@ -30,12 +32,10 @@ class _edit_template_screenState extends State<edit_template_screen> {
               alignment: Alignment.center,
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 20,
-                  ),
+
                   Container(
-                      height: 300,
-                      width: 300,
+                      height: 350,
+                      width: 450,
                       decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -57,7 +57,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                           ? Image.asset(
                               festivalList[postviewIndex]['image']
                                   [backgroungindex],
-                              fit: BoxFit.cover,
+                              fit: BoxFit.fill,
                             )
                           : null),
                 ],
@@ -68,7 +68,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
             index: posteditindex,
             children: [
               Container(
-                height: 220,
+                height: 230,
                 decoration: BoxDecoration(
                   color: Color(0xff1c2438),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -387,8 +387,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
 
   Container backgroundcolors() {
     return Container(
-      height: 220,
-      padding: EdgeInsets.all(10),
+      height: 230,
       decoration: BoxDecoration(
         color: Color(0xff1c2438),
         borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -446,7 +445,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                 spreadRadius: 1,
                               )
                             ],
-                            color: (index == 0) ? color : null,
+                            color: (index == 0) ? Colors.teal : null,
                             gradient: (index > 0)
                                 ? LinearGradient(colors: gradient_List[index])
                                 : null)),
@@ -462,8 +461,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
 
   Container background() {
     return Container(
-      height: 220,
-      padding: const EdgeInsets.all(10),
+      height: 230,
       decoration: const BoxDecoration(
         color: Color(0xff1c2438),
         borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -497,12 +495,19 @@ class _edit_template_screenState extends State<edit_template_screen> {
             height: 25,
           ),
           Container(
-            height: 100,
+            height: 120,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: festivalList[3]['image'].length,
               itemBuilder: (context, index) => Card(
-                child: Image.asset(festivalList[3]['image'][index]),
+                child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isImageandColor = true;
+                        backgroungindex = index;
+                      });
+                    },
+                    child: Image.asset(festivalList[3]['image'][index])),
               ),
             ),
           )
@@ -511,39 +516,4 @@ class _edit_template_screenState extends State<edit_template_screen> {
     );
   }
 }
-// SingleChildScrollView(
-//   scrollDirection: Axis.horizontal,
-//   child: Row(
-//     children: List.generate(
-//       festivalList[postviewIndex]['image'].length,
-//           (index) => InkWell(
-//         onTap: () {
-//           setState(() {
-//             isImageandColor = true;
-//             backgroungindex = index;
-//           });
-//         },
-//         child: Padding(
-//           padding: const EdgeInsets.only(right: 18.0),
-//           child: Container(
-//               height: 100,
-//               width: 100,
-//               decoration: BoxDecoration(
-//                 boxShadow: [
-//                   BoxShadow(
-//                     color: Colors.grey,
-//                     blurRadius: 0.5,
-//                     spreadRadius: 1,
-//                   )
-//                 ],
-//                 color: Colors.black,
-//               ),
-//               child: Image.asset(
-//                 festivalList[postviewIndex]['image'][index],
-//                 fit: BoxFit.cover,
-//               )),
-//         ),
-//       ),
-//     ),
-//   ),
-// ),
+

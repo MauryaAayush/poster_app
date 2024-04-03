@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
 import 'All_Variables.dart';
 
 
 List gradient_List = [
-  color,
   [Color(0xffB3C8CF), Color(0xffBED7DC), Color(0xffF1EEDC), Color(0xffE5DDC5)],
   [Color(0xff49243E), Color(0xff704264), Color(0xffBB8493), Color(0xffDBAFA0)],
   [Color(0xffD20062), Color(0xffD6589F), Color(0xffD895DA), Color(0xffC4E4FF)],
