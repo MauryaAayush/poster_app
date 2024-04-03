@@ -14,8 +14,6 @@ class edit_template_screen extends StatefulWidget {
 class _edit_template_screenState extends State<edit_template_screen> {
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
@@ -32,7 +30,6 @@ class _edit_template_screenState extends State<edit_template_screen> {
               alignment: Alignment.center,
               child: Column(
                 children: [
-
                   Container(
                       height: 350,
                       width: 450,
@@ -507,7 +504,8 @@ class _edit_template_screenState extends State<edit_template_screen> {
                         backgroungindex = index;
                       });
                     },
-                    child: Image.asset(festivalList[3]['image'][index])),
+                    child: Image.asset(
+                        festivalList[postviewIndex]['image'][index])),
               ),
             ),
           )
@@ -516,4 +514,3 @@ class _edit_template_screenState extends State<edit_template_screen> {
     );
   }
 }
-
