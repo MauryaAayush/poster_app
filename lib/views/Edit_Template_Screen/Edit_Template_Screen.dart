@@ -436,57 +436,20 @@ class _edit_template_screenState extends State<edit_template_screen> {
                   child: Padding(
                     padding: const EdgeInsets.only(right: 18.0),
                     child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 0.5,
-                              spreadRadius: 1,
-                            )
-                          ],
-                          color: (index == 0) ? color : null,
-                          gradient: (index > 0)
-                              ? LinearGradient(colors: gradient_List[index])
-                              : null),
-                      child: (index == 0)
-                          ? InkWell(
-                              onTap: () {
-                                showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                          title: Text('Pick your color'),
-                                          content: Container(
-                                            height: 500,
-                                            width: 300,
-                                            // child: ColorPicker(
-                                            //   color: color,
-                                            //   onChanged: (value) {
-                                            //     setState(() {
-                                            //       color =value;
-                                            //       isImageandColor = false;
-                                            //     });
-                                            //   },
-                                            //   initialPicker: Picker.paletteHue,
-                                            // ),
-                                          ),
-                                          actions: [
-                                            InkWell(
-                                                onTap: () {
-                                                  Navigator.of(context).pop();
-                                                },
-                                                child: Text("save"))
-                                          ],
-                                        ));
-                              },
-                              child: Icon(
-                                Icons.add,
-                                size: 50,
-                              ),
-                            )
-                          : Container(),
-                    ),
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 0.5,
+                                spreadRadius: 1,
+                              )
+                            ],
+                            color: (index == 0) ? color : null,
+                            gradient: (index > 0)
+                                ? LinearGradient(colors: gradient_List[index])
+                                : null)),
                   ),
                 ),
               ),
@@ -533,18 +496,16 @@ class _edit_template_screenState extends State<edit_template_screen> {
           SizedBox(
             height: 25,
           ),
-          
           Container(
             height: 100,
-
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: festivalList[3]['image'].length,
               itemBuilder: (context, index) => Card(
-              child: Image.asset(festivalList[3]['image'][index]),
-            ),),
+                child: Image.asset(festivalList[3]['image'][index]),
+              ),
+            ),
           )
-          
         ],
       ),
     );
