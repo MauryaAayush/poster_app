@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 bool isfestival = true;
-bool isImageandColor =true;
+  bool isImageandColor =true;
 
 
 int postviewIndex = 0;

@@ -31,32 +31,37 @@ class _edit_template_screenState extends State<edit_template_screen> {
               child: Column(
                 children: [
                   Container(
-                      height: 350,
-                      width: 450,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color:Color(0xff1c2438),
-                            blurRadius: 0.5,
-                            spreadRadius: 1,
-                          )
-                        ],
-                        color: (!isImageandColor && backgroundcolorindex == 0)
-                            ? color
-                            : null,
-                        gradient: (!isImageandColor && backgroundcolorindex > 0)
-                            ? LinearGradient(
-                                colors: gradient_List[backgroundcolorindex],
+                    margin: EdgeInsets.only(top: 20),
+                    height: 430,
+                    width: 430,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        image: (isImageandColor)
+                            ? AssetImage(
+                                festivalList[postviewIndex]['image']
+                                    [backgroungindex],
                               )
-                            : null,
+                            : AssetImage(''),
+                        fit: BoxFit.fill,
                       ),
-                      child: (isImageandColor)
-                          ? Image.asset(
-                              festivalList[postviewIndex]['image']
-                                  [backgroungindex],
-                              fit: BoxFit.fill,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0xff1c2438),
+                          blurRadius: 0.5,
+                          spreadRadius: 1,
+                        )
+                      ],
+                      color: (!isImageandColor && backgroundcolorindex == 0)
+                          ? color
+                          : null,
+                      gradient: (!isImageandColor && backgroundcolorindex > 0)
+                          ? LinearGradient(
+                              colors: gradient_List[backgroundcolorindex],
                             )
-                          : null),
+                          : null,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -492,21 +497,43 @@ class _edit_template_screenState extends State<edit_template_screen> {
             height: 25,
           ),
           Container(
-            height: 120,
+            height: 130,
             child: ListView.builder(
+              itemExtent: 130,
               scrollDirection: Axis.horizontal,
               itemCount: festivalList[3]['image'].length,
-              itemBuilder: (context, index) => Card(
-                child: GestureDetector(
+              itemBuilder: (context, index) =>
+
+                  // Card(
+                  //   child: GestureDetector(
+                  //       onTap: () {
+                  //         setState(() {
+                  //           isImageandColor = true;
+                  //           backgroungindex = index;
+                  //         });
+                  //       },
+                  //       child: Image.asset(
+                  //           festivalList[postviewIndex]['image'][index])),
+                  // ),
+                  GestureDetector(
                     onTap: () {
                       setState(() {
                         isImageandColor = true;
                         backgroungindex = index;
                       });
                     },
-                    child: Image.asset(
-                        festivalList[postviewIndex]['image'][index])),
-              ),
+                    child: Container(
+                                    margin: EdgeInsets.only(right: 30),
+
+                                    width: 250,
+                                    decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(festivalList[postviewIndex]['image'][index]),
+                    ),
+                                    ),
+                                  ),
+                  ),
             ),
           )
         ],

@@ -35,7 +35,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               letterSpacing: 3,
             ),
           ),
-          backgroundColor: const Color(0xff1c2438),
+          backgroundColor:  Color(0xff1c2438),
           actions: [
             InkWell(
               onTap: () {
