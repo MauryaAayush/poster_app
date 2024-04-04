@@ -14,13 +14,19 @@ class edit_template_screen extends StatefulWidget {
 class _edit_template_screenState extends State<edit_template_screen> {
   @override
   Widget build(BuildContext context) {
+
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 80,
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Color(0xff1c2438),
         title: Text(
           'Edit',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white,
+          fontSize: 25),
         ),
       ),
       body: Column(
@@ -52,9 +58,9 @@ class _edit_template_screenState extends State<edit_template_screen> {
                           spreadRadius: 1,
                         )
                       ],
-                      color: (!isImageandColor && backgroundcolorindex == 0)
-                          ? color
-                          : null,
+                      // color: (!isImageandColor && backgroundcolorindex == 0)
+                          // ? color
+                          // : null,
                       gradient: (!isImageandColor && backgroundcolorindex > 0)
                           ? LinearGradient(
                               colors: gradient_List[backgroundcolorindex],
@@ -191,7 +197,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                             'Add Text',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                        ),
+                        ),   // this is for the Add Text
                         Container(
                           width: 150,
                           alignment: Alignment.center,
@@ -211,7 +217,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                             'Alignment',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                        ),
+                        ), // this is for the Aligment
                       ],
                     ),
                     SizedBox(
@@ -239,7 +245,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                             'Font Family',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                        ),
+                        ),  // This is for the Font Family
                         Container(
                           width: 150,
                           alignment: Alignment.center,
@@ -259,7 +265,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                             'Font Color',
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
-                        ),
+                        ),  // this is for the Font Color
                       ],
                     ),
                   ],
@@ -403,6 +409,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+
               Text(
                 'Choose Background Color',
                 style: TextStyle(color: Colors.white, fontSize: 15),
@@ -447,10 +454,10 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                 spreadRadius: 1,
                               )
                             ],
-                            color: (index == 0) ? Colors.teal : null,
-                            gradient: (index > 0)
-                                ? LinearGradient(colors: gradient_List[index])
-                                : null)),
+                            // color: (index == 0) ? Colors.teal : null,
+                            gradient:
+                                 LinearGradient(colors: gradient_List[index])
+                                )),
                   ),
                 ),
               ),
@@ -462,6 +469,9 @@ class _edit_template_screenState extends State<edit_template_screen> {
   }
 
   Container background() {
+
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Container(
       height: 230,
       decoration: const BoxDecoration(
@@ -474,24 +484,28 @@ class _edit_template_screenState extends State<edit_template_screen> {
           SizedBox(
             height: 15,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Choose Background',
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
-              InkWell(
-                  onTap: () {
-                    setState(() {
-                      posteditindex = 0;
-                    });
-                  },
-                  child: Icon(
-                    Icons.done,
-                    color: Colors.white,
-                  ))
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Text(
+                  'Choose Background',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                InkWell(
+                    onTap: () {
+                      setState(() {
+                        posteditindex = 0;
+                      });
+                    },
+                    child: Icon(
+                      Icons.done,
+                      color: Colors.white,
+                    ))
+              ],
+            ),
           ),
           SizedBox(
             height: 25,
@@ -499,41 +513,27 @@ class _edit_template_screenState extends State<edit_template_screen> {
           Container(
             height: 130,
             child: ListView.builder(
-              itemExtent: 130,
               scrollDirection: Axis.horizontal,
-              itemCount: festivalList[3]['image'].length,
-              itemBuilder: (context, index) =>
-
-                  // Card(
-                  //   child: GestureDetector(
-                  //       onTap: () {
-                  //         setState(() {
-                  //           isImageandColor = true;
-                  //           backgroungindex = index;
-                  //         });
-                  //       },
-                  //       child: Image.asset(
-                  //           festivalList[postviewIndex]['image'][index])),
-                  // ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isImageandColor = true;
-                        backgroungindex = index;
-                      });
-                    },
-                    child: Container(
-                                    margin: EdgeInsets.only(right: 30),
-
-                                    width: 250,
-                                    decoration: BoxDecoration(
+              itemCount: festivalList[postviewIndex]['image'].length,
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isImageandColor = true;
+                    backgroungindex = index;
+                  });
+                },
+                child: Container(
+                  margin: EdgeInsets.only(right: 30),
+                  width: width*0.35,
+                  decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(festivalList[postviewIndex]['image'][index]),
+                      image: AssetImage(
+                          festivalList[postviewIndex]['image'][index]),
                     ),
-                                    ),
-                                  ),
                   ),
+                ),
+              ),
             ),
           )
         ],
