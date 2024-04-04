@@ -10,11 +10,11 @@ List festivalList=[
     'image' : [
       'assets/images/Makar sankranti/M.S1.jpeg',
       'assets/images/Makar sankranti/M.S2.jpeg',
-      'assets/images/Makar sankranti/M.S1.jpeg',
-      'assets/images/Makar sankranti/M.S1.jpeg',
-      'assets/images/Makar sankranti/M.S1.jpeg',
-      'assets/images/Makar sankranti/M.S1.jpeg',
-      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S3.jpeg',
+      'assets/images/Makar sankranti/M.S4.jpeg',
+      'assets/images/Makar sankranti/M.S5.jpeg',
+      'assets/images/Makar sankranti/M.S6.jpeg',
+      'assets/images/Makar sankranti/M.S7.jpeg',
     ]
   },
 
