@@ -120,7 +120,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                             });
                           },
                           child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
