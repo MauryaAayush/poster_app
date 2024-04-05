@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
 import '../../utils/All_Variables.dart';
 import '../../utils/Gradient_List.dart';
+import '../../utils/Text_Decoration.dart';
 import '../../utils/festivals.dart';
+import 'Components/All_Text_Elements/addthetext/addtext.dart';
+import 'Components/All_Text_Elements/buttons.dart';
+import 'Components/All_Text_Elements/fontcolor/color.dart';
+import 'Components/All_Text_Elements/fontfamily/family.dart';
+import 'Components/background/backcolor.dart';
+import 'Components/background/backgroundimage.dart';
+import 'Components/bottomnavigator.dart';
+import 'Components/simple.dart';
 
 class edit_template_screen extends StatefulWidget {
   const edit_template_screen({super.key});
@@ -41,7 +50,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                     height: 430,
                     width: 430,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
                         image: (isImageandColor)
                             ? AssetImage(
@@ -58,14 +67,40 @@ class _edit_template_screenState extends State<edit_template_screen> {
                           spreadRadius: 1,
                         )
                       ],
-                      // color: (!isImageandColor && backgroundcolorindex == 0)
-                          // ? color
-                          // : null,
-                      gradient: (!isImageandColor && backgroundcolorindex > 0)
-                          ? LinearGradient(
+
+                      gradient:
+                           LinearGradient(
                               colors: gradient_List[backgroundcolorindex],
                             )
-                          : null,
+
+                    ),
+                    child: Stack(
+                      children: [
+                        Container(
+                            width: width,
+                            height: height,
+                            child: (isImageandColor)
+                                ? Image.asset(
+                              festivalList[postviewIndex]['image']
+                              [backgroungindex],
+                              fit: BoxFit.cover,
+                            )
+                                : null),
+                        Positioned(
+                            top: top,
+                            bottom: bottem,
+                            left: left,
+                            right: right,
+                            child: Container(
+                                height: 300,
+                                width: 300,
+                                child: Text(
+                                  txtname.text,
+                                  style: textfamily[textfontfamilyindex](
+                                      fontSize: fontofsize,
+                                      color: Colorlist[textcolorindex]),
+                                )))
+                      ],
                     ),
                   ),
                 ],
@@ -75,219 +110,23 @@ class _edit_template_screenState extends State<edit_template_screen> {
           IndexedStack(
             index: posteditindex,
             children: [
+
+              canvas(), //0
+              text(), //1
               Container(
-                height: 230,
-                decoration: BoxDecoration(
-                  color: Color(0xff1c2438),
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                ),
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      'Change Background Image And Color',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              posteditindex = 4;
-                            });
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.white,
-                                  blurRadius: 5,
-                                  spreadRadius: 2,
-                                )
-                              ],
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              color: Color(0xff1c2438),
-                            ),
-                            child: Text(
-                              'Background',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              posteditindex = 5;
-                            });
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.white,
-                                  blurRadius: 5,
-                                  spreadRadius: 2,
-                                )
-                              ],
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5)),
-                              color: Color(0xff1c2438),
-                            ),
-                            child: Text(
-                              'BG Color',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ), //  For canvas  index = 0
-              Container(
-                height: 230,
-                decoration: BoxDecoration(
-                  color: Color(0xff1c2438),
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                ),
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Text(
-                      'Edit Your Text Here!!',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
-                    ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: 150,
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white,
-                                blurRadius: 5,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Color(0xff1c2438),
-                          ),
-                          child: Text(
-                            'Add Text',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),   // this is for the Add Text
-                        Container(
-                          width: 150,
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white,
-                                blurRadius: 5,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Color(0xff1c2438),
-                          ),
-                          child: Text(
-                            'Alignment',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ), // this is for the Aligment
-                      ],
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: 150,
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white,
-                                blurRadius: 5,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Color(0xff1c2438),
-                          ),
-                          child: Text(
-                            'Font Family',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),  // This is for the Font Family
-                        Container(
-                          width: 150,
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white,
-                                blurRadius: 5,
-                                spreadRadius: 2,
-                              )
-                            ],
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Color(0xff1c2438),
-                          ),
-                          child: Text(
-                            'Font Color',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),  // this is for the Font Color
-                      ],
-                    ),
-                  ],
-                ),
-              ), // For Text  index = 1
-              Container(
-                alignment: Alignment.center,
                 height: 100,
-                width: double.infinity,
-                decoration: BoxDecoration(color: Colors.red),
-                child: Text("Under proccessing"),
-              ), // for share  index = 2
+                color: Colors.blue,
+              ),
               Container(
-                alignment: Alignment.center,
                 height: 100,
-                width: double.infinity,
-                decoration: BoxDecoration(color: Colors.teal),
-                child: Text("Under proccessing"),
-              ), // for save index = 3
+                color: Colors.red,
+              ),
               background(), //4
               backgroundcolors(), //5
-              // Container(), //6
+              textfield(), // 6
+              alignment(),//7
+              fontfamilys(), //8
+              textcolor(), //9
             ],
           ),
           Container(
@@ -311,19 +150,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                       posteditindex = 0;
                     });
                   },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.draw,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Canvas',
-                        style: TextStyle(color: Colors.white),
-                      )
-                    ],
-                  ),
+                  child: canvasedit(),
                 ),
                 InkWell(
                   onTap: () {
@@ -331,19 +158,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                       posteditindex = 1;
                     });
                   },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.text_fields,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Text',
-                        style: TextStyle(color: Colors.white),
-                      )
-                    ],
-                  ),
+                  child: textedit(),
                 ),
                 InkWell(
                   onTap: () {
@@ -351,40 +166,14 @@ class _edit_template_screenState extends State<edit_template_screen> {
                       posteditindex = 2;
                     });
                   },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.share,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Share',
-                        style: TextStyle(color: Colors.white),
-                      )
-                    ],
-                  ),
-                ),
+                    child: save()),
                 InkWell(
                   onTap: () {
                     setState(() {
                       posteditindex = 3;
                     });
                   },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.save_alt,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'Save',
-                        style: TextStyle(color: Colors.white),
-                      )
-                    ],
-                  ),
-                ),
+                    child: share()),
               ],
             ),
           ),
@@ -393,40 +182,331 @@ class _edit_template_screenState extends State<edit_template_screen> {
     );
   }
 
+
+  Container textfield() {
+    return Container(
+      height: 230,
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+        color: Color(0xff1c2438),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              headtext(),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      TextEditingControllerlist.add(txtname.text);
+                      posteditindex = 1;
+                    });
+                  },
+                  child: icons())
+            ],
+          ),
+          dividerandspace(),
+          InkWell(
+            onTap: () {
+              setState(() {
+                posteditindex = 6;
+              });
+            },
+              child: textFields())
+        ],
+      ),
+    );
+  }
+  Container fontfamilys() {
+    return Container(
+      height: 230,
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+        color: Color(0xff1c2438),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              familyheadtext(),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      posteditindex = 1;
+                    });
+                  },
+                  child: icons())
+            ],
+          ),
+          dividerandspace(),
+          Container(
+            height: 144,
+            child: SingleChildScrollView(
+              child: Column(
+                  children: List.generate(
+                      textfamily.length,
+                          (index) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              textfontfamilyindex = index;
+                            });
+                          },
+                          child: fontfamilytext(index),
+                        ),
+                      ))),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+  Container textcolor() {
+    return Container(
+      height: 230,
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+        color: Color(0xff1c2438),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              headfontcolor(),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      posteditindex = 1;
+                    });
+                  },
+                  child: icons())
+            ],
+          ),
+          dividerandspace(),
+          GridView.builder(
+            itemCount: Colorlist.length,
+            physics: PageScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+            itemBuilder: (context, index) => InkWell(
+              onTap: () {
+                setState(() {
+                  textcolorindex = index;
+                  (index == 0)
+                      ? showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text('Pick your color'),
+                        content: Container(
+                          height: 500,
+                          width: 300,
+                          child: ColorPicker(
+                            color: Colorlist[0],
+                            onChanged: (value) {
+                              setState(() {
+                                Colorlist[0] = value;
+                              });
+                            },
+                            initialPicker: Picker.paletteHue,
+                          ),
+                        ),
+                        actions: [
+                          InkWell(
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text("save"))
+                        ],
+                      ))
+                      : null;
+                });
+              },
+              child: coloricon(index),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+  // Container alignment() {
+  //   return Container(
+  //     height: 130,
+  //     padding:  EdgeInsets.all(10),
+  //     decoration:  BoxDecoration(
+  //       color: Color(0xff1c2438),
+  //       borderRadius: BorderRadius.all(Radius.circular(5)),
+  //     ),
+  //     alignment: Alignment.center,
+  //     // child: Column(
+  //     //   children: [
+  //     //     // const SizedBox(
+  //     //     //   height: 15,
+  //     //     // ),
+  //     //     // Row(
+  //     //     //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //     //     //   children: [
+  //     //     //     headofalignments(),
+  //     //     //     InkWell(
+  //     //     //         onTap: () {
+  //     //     //           setState(() {
+  //     //     //             posteditindex = 1;
+  //     //     //           });
+  //     //     //         },
+  //     //     //         child: icons())
+  //     //     //   ],
+  //     //     // ),
+  //     //     // dividerandspace(),
+  //     //     // Padding(
+  //     //     //   padding: const EdgeInsets.symmetric(horizontal: 8.0),
+  //     //     //   child: Row(
+  //     //     //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     //     //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //     //     //     children: [
+  //     //     //       Column(
+  //     //     //         children: [
+  //     //     //           headofpostion(),
+  //     //     //           SizedBox(
+  //     //     //             height: 5,
+  //     //     //           ),
+  //     //     //           InkWell(
+  //     //     //             onTap: () {
+  //     //     //               setState(() {
+  //     //     //                 bottem += 4;
+  //     //     //                 top -= 4;
+  //     //     //               });
+  //     //     //             },
+  //     //     //             child: alignmenttop(),
+  //     //     //           ),
+  //     //     //           SizedBox(
+  //     //     //             height: 5,
+  //     //     //           ),
+  //     //     //           Row(
+  //     //     //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //     //     //             children: [
+  //     //     //               SizedBox(
+  //     //     //                 width: 12,
+  //     //     //               ),
+  //     //     //               InkWell(
+  //     //     //                 onTap: () {
+  //     //     //                   setState(() {
+  //     //     //                     right += 4;
+  //     //     //                     left -= 4;
+  //     //     //                   });
+  //     //     //                 },
+  //     //     //                 child: alignmentleft(),
+  //     //     //               ),
+  //     //     //               SizedBox(
+  //     //     //                 width: 38,
+  //     //     //               ),
+  //     //     //               InkWell(
+  //     //     //                 onTap: () {
+  //     //     //                   setState(() {
+  //     //     //                     right -= 4;
+  //     //     //                     left += 4;
+  //     //     //                   });
+  //     //     //                 },
+  //     //     //                 child: alignmentrigth(),
+  //     //     //               ),
+  //     //     //             ],
+  //     //     //           ),
+  //     //     //           SizedBox(
+  //     //     //             height: 5,
+  //     //     //           ),
+  //     //     //           InkWell(
+  //     //     //             onTap: () {
+  //     //     //               setState(() {
+  //     //     //                 top += 4;
+  //     //     //                 bottem -= 4;
+  //     //     //               });
+  //     //     //             },
+  //     //     //             child: alignmentbottom(),
+  //     //     //           ),
+  //     //     //         ],
+  //     //     //       ),
+  //     //     //       Column(
+  //     //     //         crossAxisAlignment: CrossAxisAlignment.start,
+  //     //     //         children: [
+  //     //     //           fontsizetext(),
+  //     //     //           SizedBox(
+  //     //     //             height: 10,
+  //     //     //           ),
+  //     //     //           Row(
+  //     //     //             children: [
+  //     //     //               InkWell(
+  //     //     //                 onTap: () {
+  //     //     //                   setState(() {
+  //     //     //                     fontofsize++;
+  //     //     //                   });
+  //     //     //                 },
+  //     //     //                 child: fontsizeincrease(),
+  //     //     //               ),
+  //     //     //               SizedBox(
+  //     //     //                 width: 12,
+  //     //     //               ),
+  //     //     //               InkWell(
+  //     //     //                 onTap: () {
+  //     //     //                   setState(() {
+  //     //     //                     fontofsize--;
+  //     //     //                   });
+  //     //     //                 },
+  //     //     //                 child: fontsizereduce(),
+  //     //     //               ),
+  //     //     //             ],
+  //     //     //           )
+  //     //     //         ],
+  //     //     //       ),
+  //     //     //     ],
+  //     //     //   ),
+  //     //     // ),
+  //     //   ],
+  //     // ),
+  //   );
+  // }
   Container backgroundcolors() {
     return Container(
       height: 230,
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
         color: Color(0xff1c2438),
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       alignment: Alignment.center,
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-
-              Text(
-                'Choose Background Color',
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
+              headofbgcolor(),
               InkWell(
                   onTap: () {
                     setState(() {
                       posteditindex = 0;
                     });
                   },
-                  child: Icon(
-                    Icons.done,
-                    color: Colors.white,
-                  ))
+                  child: icons())
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           SingleChildScrollView(
@@ -434,31 +514,14 @@ class _edit_template_screenState extends State<edit_template_screen> {
             child: Row(
               children: List.generate(
                 gradient_List.length,
-                (index) => InkWell(
+                    (index) => InkWell(
                   onTap: () {
                     setState(() {
                       isImageandColor = false;
                       backgroundcolorindex = index;
                     });
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 18.0),
-                    child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 0.5,
-                                spreadRadius: 1,
-                              )
-                            ],
-                            // color: (index == 0) ? Colors.teal : null,
-                            gradient:
-                                 LinearGradient(colors: gradient_List[index])
-                                )),
-                  ),
+                  child: backcolors(index),
                 ),
               ),
             ),
@@ -467,11 +530,58 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
-
   Container background() {
-
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    return Container(
+      height: 230,
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+        color: Color(0xff1c2438),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      alignment: Alignment.center,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              headofimage(),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      posteditindex = 0;
+                    });
+                  },
+                  child: icons())
+            ],
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(
+                festivalList[postviewIndex]['image'].length,
+                    (index) => InkWell(
+                  onTap: () {
+                    setState(() {
+                      isImageandColor = true;
+                      backgroungindex = index;
+                    });
+                  },
+                  child: backimage(index),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+  Container text() {
     return Container(
       height: 230,
       decoration: const BoxDecoration(
@@ -481,63 +591,104 @@ class _edit_template_screenState extends State<edit_template_screen> {
       alignment: Alignment.center,
       child: Column(
         children: [
-          SizedBox(
+           SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+          headoftext(),
+           SizedBox(
+            height: 20,
+          ),
 
-                Text(
-                  'Choose Background',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        posteditindex = 0;
-                      });
-                    },
-                    child: Icon(
-                      Icons.done,
-                      color: Colors.white,
-                    ))
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Container(
-            height: 130,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: festivalList[postviewIndex]['image'].length,
-              itemBuilder: (context, index) => GestureDetector(
+
+          // Add Text and alingment
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+             InkWell(
                 onTap: () {
                   setState(() {
-                    isImageandColor = true;
-                    backgroungindex = index;
+                    posteditindex = 6;
                   });
                 },
-                child: Container(
-                  margin: EdgeInsets.only(right: 30),
-                  width: width*0.35,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                          festivalList[postviewIndex]['image'][index]),
-                    ),
-                  ),
-                ),
+                 child: addtext()),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    posteditindex = 7;
+                  });
+                },
+                  child: alignment()),
+            ],
+          ),
+
+
+           SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    posteditindex = 8;
+                  });
+                },
+                  child: fontfamily()),
+              InkWell(
+                  onTap: () {
+                    posteditindex = 9;
+                  },
+                  child: fontcolor()),
+
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+  Container canvas() {
+    return Container(
+      height: 230,
+      decoration: const BoxDecoration(
+        color: Color(0xff1c2438),
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      alignment: Alignment.center,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 30,
+          ),
+          textname(),
+          SizedBox(
+            height: 50,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    posteditindex = 4;
+                  });
+                },
+                child: backgroundimg(),
               ),
-            ),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    posteditindex = 5;
+                  });
+                },
+                child: backgroundcol(),
+              ),
+            ],
           )
         ],
       ),
     );
   }
+
+
 }

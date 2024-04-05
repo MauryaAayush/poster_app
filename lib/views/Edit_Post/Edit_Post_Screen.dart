@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,7 +26,13 @@ class _Edit_POst_ScreenState extends State<Edit_POst_Screen> {
         foregroundColor: Colors.white,
         backgroundColor: const Color(0xff1d243b),
 
-        actions: [IconButton(onPressed: () { Navigator.of(context).pushNamed('/four');}, icon: Icon(Icons.download))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/four');
+              },
+              icon: Icon(Icons.download))
+        ],
       ),
       body: Column(
         children: [

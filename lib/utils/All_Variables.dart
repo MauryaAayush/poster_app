@@ -1,4 +1,9 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+
+GlobalKey imgkey = GlobalKey();
+Uint8List? imgdata;
 
 bool isfestival = true;
   bool isImageandColor =true;
