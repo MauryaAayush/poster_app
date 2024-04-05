@@ -5,6 +5,12 @@ import '../../utils/Gradient_List.dart';
 import '../../utils/Text_Decoration.dart';
 import '../../utils/festivals.dart';
 import 'Components/All_Text_Elements/addthetext/addtext.dart';
+import 'Components/All_Text_Elements/alignment/bottom.dart';
+import 'Components/All_Text_Elements/alignment/fontsize.dart';
+import 'Components/All_Text_Elements/alignment/left.dart';
+import 'Components/All_Text_Elements/alignment/rigth.dart';
+import 'Components/All_Text_Elements/alignment/simple.dart';
+import 'Components/All_Text_Elements/alignment/top.dart';
 import 'Components/All_Text_Elements/buttons.dart';
 import 'Components/All_Text_Elements/fontcolor/color.dart';
 import 'Components/All_Text_Elements/fontfamily/family.dart';
@@ -43,67 +49,69 @@ class _edit_template_screenState extends State<edit_template_screen> {
           Expanded(
             child: Container(
               alignment: Alignment.center,
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    height: 430,
-                    width: 430,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: (isImageandColor)
-                            ? AssetImage(
-                                festivalList[postviewIndex]['image']
-                                    [backgroungindex],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: 430,
+                      width: 430,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: (isImageandColor)
+                              ? AssetImage(
+                                  festivalList[postviewIndex]['image']
+                                      [backgroungindex],
+                                )
+                              : AssetImage(''),
+                          fit: BoxFit.fill,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xff1c2438),
+                            blurRadius: 0.5,
+                            spreadRadius: 1,
+                          )
+                        ],
+                
+                        gradient:
+                             LinearGradient(
+                                colors: gradient_List[backgroundcolorindex],
                               )
-                            : AssetImage(''),
-                        fit: BoxFit.fill,
+                
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xff1c2438),
-                          blurRadius: 0.5,
-                          spreadRadius: 1,
-                        )
-                      ],
-
-                      gradient:
-                           LinearGradient(
-                              colors: gradient_List[backgroundcolorindex],
-                            )
-
+                      child: Stack(
+                        children: [
+                          Container(
+                              width: width,
+                              height: height,
+                              child: (isImageandColor)
+                                  ? Image.asset(
+                                festivalList[postviewIndex]['image']
+                                [backgroungindex],
+                                fit: BoxFit.cover,
+                              )
+                                  : null),
+                          Positioned(
+                              top: top,
+                              bottom: bottem,
+                              left: left,
+                              right: right,
+                              child: Container(
+                                  height: 300,
+                                  width: 300,
+                                  child: Text(
+                                    txtname.text,
+                                    style: textfamily[textfontfamilyindex](
+                                        fontSize: fontofsize,
+                                        color: Colorlist[textcolorindex]),
+                                  )))
+                        ],
+                      ),
                     ),
-                    child: Stack(
-                      children: [
-                        Container(
-                            width: width,
-                            height: height,
-                            child: (isImageandColor)
-                                ? Image.asset(
-                              festivalList[postviewIndex]['image']
-                              [backgroungindex],
-                              fit: BoxFit.cover,
-                            )
-                                : null),
-                        Positioned(
-                            top: top,
-                            bottom: bottem,
-                            left: left,
-                            right: right,
-                            child: Container(
-                                height: 300,
-                                width: 300,
-                                child: Text(
-                                  txtname.text,
-                                  style: textfamily[textfontfamilyindex](
-                                      fontSize: fontofsize,
-                                      color: Colorlist[textcolorindex]),
-                                )))
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -124,7 +132,141 @@ class _edit_template_screenState extends State<edit_template_screen> {
               background(), //4
               backgroundcolors(), //5
               textfield(), // 6
-              alignment(),//7
+
+
+              // Alignment conatiner
+              Container(
+                height: 230,
+                padding:  EdgeInsets.all(10),
+                decoration:  BoxDecoration(
+                  color: Color(0xff1c2438),
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                ),
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        headofalignments(),
+                        InkWell(
+                            onTap: () {
+                              setState(() {
+                                posteditindex = 1;
+                              });
+                            },
+                            child: icons())
+                      ],
+                    ),
+                    dividerandspace(),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              headofpostion(),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    bottem += 4;
+                                    top -= 4;
+                                  });
+                                },
+                                child: alignmenttop(),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        right += 4;
+                                        left -= 4;
+                                      });
+                                    },
+                                    child: alignmentleft(),
+                                  ),
+                                  SizedBox(
+                                    width: 38,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        right -= 4;
+                                        left += 4;
+                                      });
+                                    },
+                                    child: alignmentrigth(),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    top += 4;
+                                    bottem -= 4;
+                                  });
+                                },
+                                child: alignmentbottom(),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              fontsizetext(),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        fontofsize++;
+                                      });
+                                    },
+                                    child: fontsizeincrease(),
+                                  ),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        fontofsize--;
+                                      });
+                                    },
+                                    child: fontsizereduce(),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),//7 for the alignment
               fontfamilys(), //8
               textcolor(), //9
             ],
@@ -345,140 +487,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
-  // Container alignment() {
-  //   return Container(
-  //     height: 130,
-  //     padding:  EdgeInsets.all(10),
-  //     decoration:  BoxDecoration(
-  //       color: Color(0xff1c2438),
-  //       borderRadius: BorderRadius.all(Radius.circular(5)),
-  //     ),
-  //     alignment: Alignment.center,
-  //     // child: Column(
-  //     //   children: [
-  //     //     // const SizedBox(
-  //     //     //   height: 15,
-  //     //     // ),
-  //     //     // Row(
-  //     //     //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     //     //   children: [
-  //     //     //     headofalignments(),
-  //     //     //     InkWell(
-  //     //     //         onTap: () {
-  //     //     //           setState(() {
-  //     //     //             posteditindex = 1;
-  //     //     //           });
-  //     //     //         },
-  //     //     //         child: icons())
-  //     //     //   ],
-  //     //     // ),
-  //     //     // dividerandspace(),
-  //     //     // Padding(
-  //     //     //   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-  //     //     //   child: Row(
-  //     //     //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     //     //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //     //     //     children: [
-  //     //     //       Column(
-  //     //     //         children: [
-  //     //     //           headofpostion(),
-  //     //     //           SizedBox(
-  //     //     //             height: 5,
-  //     //     //           ),
-  //     //     //           InkWell(
-  //     //     //             onTap: () {
-  //     //     //               setState(() {
-  //     //     //                 bottem += 4;
-  //     //     //                 top -= 4;
-  //     //     //               });
-  //     //     //             },
-  //     //     //             child: alignmenttop(),
-  //     //     //           ),
-  //     //     //           SizedBox(
-  //     //     //             height: 5,
-  //     //     //           ),
-  //     //     //           Row(
-  //     //     //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     //     //             children: [
-  //     //     //               SizedBox(
-  //     //     //                 width: 12,
-  //     //     //               ),
-  //     //     //               InkWell(
-  //     //     //                 onTap: () {
-  //     //     //                   setState(() {
-  //     //     //                     right += 4;
-  //     //     //                     left -= 4;
-  //     //     //                   });
-  //     //     //                 },
-  //     //     //                 child: alignmentleft(),
-  //     //     //               ),
-  //     //     //               SizedBox(
-  //     //     //                 width: 38,
-  //     //     //               ),
-  //     //     //               InkWell(
-  //     //     //                 onTap: () {
-  //     //     //                   setState(() {
-  //     //     //                     right -= 4;
-  //     //     //                     left += 4;
-  //     //     //                   });
-  //     //     //                 },
-  //     //     //                 child: alignmentrigth(),
-  //     //     //               ),
-  //     //     //             ],
-  //     //     //           ),
-  //     //     //           SizedBox(
-  //     //     //             height: 5,
-  //     //     //           ),
-  //     //     //           InkWell(
-  //     //     //             onTap: () {
-  //     //     //               setState(() {
-  //     //     //                 top += 4;
-  //     //     //                 bottem -= 4;
-  //     //     //               });
-  //     //     //             },
-  //     //     //             child: alignmentbottom(),
-  //     //     //           ),
-  //     //     //         ],
-  //     //     //       ),
-  //     //     //       Column(
-  //     //     //         crossAxisAlignment: CrossAxisAlignment.start,
-  //     //     //         children: [
-  //     //     //           fontsizetext(),
-  //     //     //           SizedBox(
-  //     //     //             height: 10,
-  //     //     //           ),
-  //     //     //           Row(
-  //     //     //             children: [
-  //     //     //               InkWell(
-  //     //     //                 onTap: () {
-  //     //     //                   setState(() {
-  //     //     //                     fontofsize++;
-  //     //     //                   });
-  //     //     //                 },
-  //     //     //                 child: fontsizeincrease(),
-  //     //     //               ),
-  //     //     //               SizedBox(
-  //     //     //                 width: 12,
-  //     //     //               ),
-  //     //     //               InkWell(
-  //     //     //                 onTap: () {
-  //     //     //                   setState(() {
-  //     //     //                     fontofsize--;
-  //     //     //                   });
-  //     //     //                 },
-  //     //     //                 child: fontsizereduce(),
-  //     //     //               ),
-  //     //     //             ],
-  //     //     //           )
-  //     //     //         ],
-  //     //     //       ),
-  //     //     //     ],
-  //     //     //   ),
-  //     //     // ),
-  //     //   ],
-  //     // ),
-  //   );
-  // }
+
   Container backgroundcolors() {
     return Container(
       height: 230,
