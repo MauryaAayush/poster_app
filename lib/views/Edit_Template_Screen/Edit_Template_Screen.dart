@@ -30,7 +30,6 @@ class edit_template_screen extends StatefulWidget {
 class _edit_template_screenState extends State<edit_template_screen> {
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
@@ -41,9 +40,29 @@ class _edit_template_screenState extends State<edit_template_screen> {
         backgroundColor: Color(0xff1c2438),
         title: Text(
           'Edit',
-          style: TextStyle(color: Colors.white,
-          fontSize: 25),
+          style: TextStyle(color: Colors.white, fontSize: 25),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: InkWell(
+                onTap: () {
+                  setState(() {
+                    isImageandColor = true;
+                    txtname = TextEditingController(text: '');
+                    textcolorindex = 0;
+                    textfontfamilyindex = 0;
+                    top = 0;
+                    bottem = 0;
+                    left = 0;
+                    right = 0;
+                    backgroundcolorindex == 0;
+                    backgroungindex = 0;
+                  });
+                },
+                child: Icon(Icons.replay)),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -60,30 +79,26 @@ class _edit_template_screenState extends State<edit_template_screen> {
                         height: 430,
                         width: 430,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                            image: (isImageandColor)
-                                ? AssetImage(
-                                    festivalList[postviewIndex]['image']
-                                        [backgroungindex],
-                                  )
-                                : AssetImage(''),
-                            fit: BoxFit.fill,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0xff1c2438),
-                              blurRadius: 0.5,
-                              spreadRadius: 1,
-                            )
-                          ],
-
-                          gradient:
-                               LinearGradient(
-                                  colors: gradient_List[backgroundcolorindex],
-                                )
-
-                        ),
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                              image: (isImageandColor)
+                                  ? AssetImage(
+                                      festivalList[postviewIndex]['image']
+                                          [backgroungindex],
+                                    )
+                                  : AssetImage(''),
+                              fit: BoxFit.fill,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0xff1c2438),
+                                blurRadius: 0.5,
+                                spreadRadius: 1,
+                              )
+                            ],
+                            gradient: LinearGradient(
+                              colors: gradient_List[backgroundcolorindex],
+                            )),
                         child: Stack(
                           children: [
                             // Container(
@@ -122,7 +137,6 @@ class _edit_template_screenState extends State<edit_template_screen> {
           IndexedStack(
             index: posteditindex,
             children: [
-
               canvas(), //0
               text(), //1
               Container(
@@ -137,12 +151,11 @@ class _edit_template_screenState extends State<edit_template_screen> {
               backgroundcolors(), //5
               textfield(), // 6
 
-
               // Alignment conatiner
               Container(
                 height: 230,
-                padding:  EdgeInsets.all(10),
-                decoration:  BoxDecoration(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
                   color: Color(0xff1c2438),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
@@ -191,7 +204,8 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                 height: 5,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(
                                     width: 12,
@@ -270,8 +284,8 @@ class _edit_template_screenState extends State<edit_template_screen> {
                     ),
                   ],
                 ),
-              ),//7 for the alignment
-              fontfamilys(),//8
+              ), //7 for the alignment
+              fontfamilys(), //8
               textcolor(), //9
             ],
           ),
@@ -307,18 +321,18 @@ class _edit_template_screenState extends State<edit_template_screen> {
                   child: textedit(),
                 ),
                 InkWell(
-                  onTap: () {
-                    setState(() {
-                      posteditindex = 2;
-                    });
-                  },
+                    onTap: () {
+                      setState(() {
+                        posteditindex = 2;
+                      });
+                    },
                     child: save()),
                 InkWell(
-                  onTap: () {
-                    setState(() {
-                      posteditindex = 3;
-                    });
-                  },
+                    onTap: () {
+                      setState(() {
+                        posteditindex = 3;
+                      });
+                    },
                     child: share()),
               ],
             ),
@@ -327,7 +341,6 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
-
 
   Container textfield() {
     return Container(
@@ -358,16 +371,17 @@ class _edit_template_screenState extends State<edit_template_screen> {
           ),
           dividerandspace(),
           InkWell(
-            onTap: () {
-              setState(() {
-                posteditindex = 6;
-              });
-            },
+              onTap: () {
+                setState(() {
+                  posteditindex = 6;
+                });
+              },
               child: textFields())
         ],
       ),
     );
   }
+
   Container fontfamilys() {
     return Container(
       height: 230,
@@ -396,28 +410,40 @@ class _edit_template_screenState extends State<edit_template_screen> {
           ),
           dividerandspace(),
           Container(
-            height: 144,
-            child: SingleChildScrollView(
-              child: Column(
-                  children: List.generate(
-                      textfamily.length,
-                          (index) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
-                              textfontfamilyindex = index;
-                            });
-                          },
-                          child: fontfamilytext(index),
-                        ),
-                      ))),
+            height: 145,
+            child: Expanded(
+              child: Stack(
+                children: [
+                  Center(
+                    child: Container(
+                      height: 60,
+                      width: 350,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white.withOpacity(0.2),
+                      ),
+                    ),
+                  ),
+                  ListWheelScrollView.useDelegate(
+                      itemExtent: 55,
+                      onSelectedItemChanged: (value) {
+                        setState(() {
+                          textfontfamilyindex = value;
+                        });
+                      },
+                      childDelegate: ListWheelChildBuilderDelegate(
+                        childCount: textfamily.length,
+                        builder: (context, index) => fontfamilytext(index),
+                      ))
+                ],
+              ),
             ),
           )
         ],
       ),
     );
   }
+
   Container textcolor() {
     return Container(
       height: 230,
@@ -449,37 +475,37 @@ class _edit_template_screenState extends State<edit_template_screen> {
             itemCount: Colorlist.length,
             shrinkWrap: true,
             gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
             itemBuilder: (context, index) => InkWell(
               onTap: () {
                 setState(() {
                   textcolorindex = index;
                   (index == 0)
                       ? showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: const Text('Pick your color'),
-                        content: Container(
-                          height: 400,
-                          width: 300,
-                          child: ColorPicker(
-                            color: Colorlist[0],
-                            onChanged: (value) {
-                              setState(() {
-                                Colorlist[0] = value;
-                              });
-                            },
-                            initialPicker: Picker.paletteHue,
-                          ),
-                        ),
-                        actions: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text("save"))
-                        ],
-                      ))
+                          context: context,
+                          builder: (context) => AlertDialog(
+                                title: const Text('Pick your color'),
+                                content: Container(
+                                  height: 500,
+                                  width: 300,
+                                  child: ColorPicker(
+                                    color: Colorlist[0],
+                                    onChanged: (value) {
+                                      setState(() {
+                                        Colorlist[0] = value;
+                                      });
+                                    },
+                                    initialPicker: Picker.paletteHue,
+                                  ),
+                                ),
+                                actions: [
+                                  InkWell(
+                                      onTap: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text("save"))
+                                ],
+                              ))
                       : null;
                 });
               },
@@ -526,7 +552,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
             child: Row(
               children: List.generate(
                 gradient_List.length,
-                    (index) => InkWell(
+                (index) => InkWell(
                   onTap: () {
                     setState(() {
                       isImageandColor = false;
@@ -542,6 +568,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
+
   Container background() {
     return Container(
       height: 230,
@@ -577,7 +604,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
             child: Row(
               children: List.generate(
                 festivalList[postviewIndex]['image'].length,
-                    (index) => InkWell(
+                (index) => InkWell(
                   onTap: () {
                     setState(() {
                       isImageandColor = true;
@@ -593,6 +620,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
+
   Container text() {
     return Container(
       height: 230,
@@ -603,49 +631,47 @@ class _edit_template_screenState extends State<edit_template_screen> {
       alignment: Alignment.center,
       child: Column(
         children: [
-           SizedBox(
+          SizedBox(
             height: 15,
           ),
           headoftext(),
-           SizedBox(
+          SizedBox(
             height: 20,
           ),
-
 
           // Add Text and alingment
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-             InkWell(
-                onTap: () {
-                  setState(() {
-                    posteditindex = 6;
-                  });
-                },
-                 child: addtext()),
               InkWell(
-                onTap: () {
-                  setState(() {
-                    posteditindex = 7;
-                  });
-                },
+                  onTap: () {
+                    setState(() {
+                      posteditindex = 6;
+                    });
+                  },
+                  child: addtext()),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      posteditindex = 7;
+                    });
+                  },
                   child: alignment()),
             ],
           ),
 
-
-           SizedBox(
+          SizedBox(
             height: 40,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               InkWell(
-                onTap: () {
-                  setState(() {
-                    posteditindex = 8;
-                  });
-                },
+                  onTap: () {
+                    setState(() {
+                      posteditindex = 8;
+                    });
+                  },
                   child: fontfamily()),
               InkWell(
                   onTap: () {
@@ -654,13 +680,13 @@ class _edit_template_screenState extends State<edit_template_screen> {
                     });
                   },
                   child: fontcolor()),
-
             ],
           ),
         ],
       ),
     );
   }
+
   Container canvas() {
     return Container(
       height: 230,
@@ -703,6 +729,4 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
-
-
 }

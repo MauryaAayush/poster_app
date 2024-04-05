@@ -127,6 +127,15 @@ List festivalList=[
     'Text': 'Create your Dussera Templates',
     'Images' : 'assets/images/14.jpeg',
     'Color' : Colors.blue,
+    'image' : [
+      'assets/images/Dussera/1.jpg',
+      'assets/images/Dussera/2.jpg',
+      'assets/images/Dussera/3.jpg',
+      'assets/images/Dussera/4.jpg',
+      'assets/images/Dussera/5.jpg',
+      'assets/images/Dussera/6.jpg',
+
+    ]
   },
 
 
