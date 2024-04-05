@@ -10,15 +10,15 @@ List TextEditingControllerlist=[];
 TextEditingController txtname = TextEditingController(text: ' ');
 double fontofsize =15;
 List Colorlist =[
-  Colors.white,
-  Colors.blueGrey,
+  Colors.teal,
+  Colors.red,
   Colors.blue,
-  Colors.lightGreen,
+  Colors.green,
   Colors.amber,
   Colors.black,
   Colors.grey,
   Colors.yellowAccent,
-  Colors.green,
+  Colors.cyan,
   Colors.orange,
 ];
 int textcolorindex=0;

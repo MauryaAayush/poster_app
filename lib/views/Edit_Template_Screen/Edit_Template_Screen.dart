@@ -267,7 +267,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                   ],
                 ),
               ),//7 for the alignment
-              fontfamilys(), //8
+              fontfamilys(),//8
               textcolor(), //9
             ],
           ),
@@ -443,10 +443,9 @@ class _edit_template_screenState extends State<edit_template_screen> {
           dividerandspace(),
           GridView.builder(
             itemCount: Colorlist.length,
-            physics: PageScrollPhysics(),
             shrinkWrap: true,
             gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 6),
             itemBuilder: (context, index) => InkWell(
               onTap: () {
                 setState(() {
@@ -457,7 +456,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                       builder: (context) => AlertDialog(
                         title: const Text('Pick your color'),
                         content: Container(
-                          height: 500,
+                          height: 400,
                           width: 300,
                           child: ColorPicker(
                             color: Colorlist[0],
@@ -646,7 +645,9 @@ class _edit_template_screenState extends State<edit_template_screen> {
                   child: fontfamily()),
               InkWell(
                   onTap: () {
-                    posteditindex = 9;
+                    setState(() {
+                      posteditindex = 9;
+                    });
                   },
                   child: fontcolor()),
 
