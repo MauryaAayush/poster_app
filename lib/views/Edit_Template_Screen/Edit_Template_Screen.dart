@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
 import '../../utils/All_Variables.dart';
@@ -52,62 +53,65 @@ class _edit_template_screenState extends State<edit_template_screen> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      height: 430,
-                      width: 430,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: (isImageandColor)
-                              ? AssetImage(
-                                  festivalList[postviewIndex]['image']
-                                      [backgroungindex],
+                    RepaintBoundary(
+                      key: imgkey,
+                      child: Container(
+                        // margin: EdgeInsets.only(top: 20),
+                        height: 430,
+                        width: 430,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            image: (isImageandColor)
+                                ? AssetImage(
+                                    festivalList[postviewIndex]['image']
+                                        [backgroungindex],
+                                  )
+                                : AssetImage(''),
+                            fit: BoxFit.fill,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xff1c2438),
+                              blurRadius: 0.5,
+                              spreadRadius: 1,
+                            )
+                          ],
+
+                          gradient:
+                               LinearGradient(
+                                  colors: gradient_List[backgroundcolorindex],
                                 )
-                              : AssetImage(''),
-                          fit: BoxFit.fill,
+
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0xff1c2438),
-                            blurRadius: 0.5,
-                            spreadRadius: 1,
-                          )
-                        ],
-                
-                        gradient:
-                             LinearGradient(
-                                colors: gradient_List[backgroundcolorindex],
-                              )
-                
-                      ),
-                      child: Stack(
-                        children: [
-                          Container(
-                              width: width,
-                              height: height,
-                              child: (isImageandColor)
-                                  ? Image.asset(
-                                festivalList[postviewIndex]['image']
-                                [backgroungindex],
-                                fit: BoxFit.cover,
-                              )
-                                  : null),
-                          Positioned(
-                              top: top,
-                              bottom: bottem,
-                              left: left,
-                              right: right,
-                              child: Container(
-                                  height: 300,
-                                  width: 300,
-                                  child: Text(
-                                    txtname.text,
-                                    style: textfamily[textfontfamilyindex](
-                                        fontSize: fontofsize,
-                                        color: Colorlist[textcolorindex]),
-                                  )))
-                        ],
+                        child: Stack(
+                          children: [
+                            // Container(
+                            //     width: width,
+                            //     height: height,
+                            //     // child:
+                            //     //      Image.asset(
+                            //     //   festivalList[postviewIndex]['image']
+                            //     //   [backgroungindex],
+                            //     //   fit: BoxFit.cover,
+                            //     // )
+                            //        ),
+                            Positioned(
+                                top: top,
+                                bottom: bottem,
+                                left: left,
+                                right: right,
+                                child: Container(
+                                    height: 300,
+                                    width: 300,
+                                    child: Text(
+                                      txtname.text,
+                                      style: textfamily[textfontfamilyindex](
+                                          fontSize: fontofsize,
+                                          color: Colorlist[textcolorindex]),
+                                    )))
+                          ],
+                        ),
                       ),
                     ),
                   ],
