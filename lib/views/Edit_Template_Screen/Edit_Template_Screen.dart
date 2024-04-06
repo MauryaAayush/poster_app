@@ -30,8 +30,8 @@ class edit_template_screen extends StatefulWidget {
 class _edit_template_screenState extends State<edit_template_screen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    // double height = MediaQuery.of(context).size.height;
+    // double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
