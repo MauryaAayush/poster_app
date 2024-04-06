@@ -294,7 +294,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
           // This is a Bottem container
           Container(
             height: 80,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Colors.white,
