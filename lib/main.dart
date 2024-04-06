@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 
         useMaterial3: true,
       ),
-     initialRoute: '/five',
+     initialRoute: '/',
 
       routes: {
           '/' : (context) => const Splash_Screen(),

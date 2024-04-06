@@ -137,21 +137,22 @@ class _edit_template_screenState extends State<edit_template_screen> {
           IndexedStack(
             index: posteditindex,
             children: [
-              canvas(), //0
-              text(), //1
+              canvas(), // 0
+              text(), // 1
               Container(
                 height: 100,
                 color: Colors.blue,
+
               ),
               Container(
                 height: 100,
                 color: Colors.red,
               ),
               background(), //4
-              backgroundcolors(), //5
+              backgroundcolors(), // 5
               textfield(), // 6
 
-              // Alignment conatiner
+              // Alignment container
               Container(
                 height: 230,
                 padding: EdgeInsets.all(10),
@@ -284,11 +285,13 @@ class _edit_template_screenState extends State<edit_template_screen> {
                     ),
                   ],
                 ),
-              ), //7 for the alignment
-              fontfamilys(), //8
-              textcolor(), //9
+              ), // 7 for the alignment
+              fontfamilys(), // 8
+              textcolor(), // 9
             ],
           ),
+
+          // This is a Bottem container
           Container(
             height: 80,
             decoration: BoxDecoration(
@@ -315,6 +318,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                 InkWell(
                   onTap: () {
                     setState(() {
+                      print('hello');
                       posteditindex = 1;
                     });
                   },
@@ -323,6 +327,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                 InkWell(
                     onTap: () {
                       setState(() {
+                        print('hello');
                         posteditindex = 2;
                       });
                     },

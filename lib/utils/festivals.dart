@@ -24,6 +24,15 @@ List festivalList=[
     'Text': 'Create your Karwa Chauth Templates',
     'Images' : 'assets/images/2.jpeg',
     'Color' : Colors.green,
+    'image' : [
+      'assets/images/Makar sankranti/M.S1.jpeg',
+      'assets/images/Makar sankranti/M.S2.jpeg',
+      'assets/images/Makar sankranti/M.S3.jpeg',
+      'assets/images/Makar sankranti/M.S4.jpeg',
+      'assets/images/Makar sankranti/M.S5.jpeg',
+      'assets/images/Makar sankranti/M.S6.jpeg',
+      'assets/images/Makar sankranti/M.S7.jpeg',
+    ]
   },
 
   {
@@ -39,13 +48,15 @@ List festivalList=[
     'Images' : 'assets/images/4.jpg',
     'Color' : Colors.purple,
     'image' : [
-          'assets/images/Diwali/diwali1.jpeg',
-          'assets/images/Diwali/diwali2.jpeg',
-          'assets/images/Diwali/diwali3.jpeg',
-          'assets/images/Diwali/diwali4.jpeg',
-          'assets/images/Diwali/diwali5.jpeg',
-          'assets/images/Diwali/diwali6.jpeg',
-          'assets/images/Diwali/diwali7.jpeg',
+          'assets/images/Diwali/diwali 9.jpg',
+          'assets/images/Diwali/diwali 8.png',
+          'assets/images/Diwali/diwali.png',
+          'assets/images/Diwali/diwali 2.png',
+          'assets/images/Diwali/diwali 3.jpg',
+          'assets/images/Diwali/diwali 4.png',
+          'assets/images/Diwali/diwali 5.png',
+          'assets/images/Diwali/diwali 6.png',
+          'assets/images/Diwali/diwali 7.png',
     ]
   },
 

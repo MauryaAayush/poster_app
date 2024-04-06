@@ -12,7 +12,7 @@ import 'package:share_extend/share_extend.dart';
 InkWell save() {
   return InkWell(
     onTap: () async {
-      posteditindex = 6;
+      // posteditindex = 2;
 
       RenderRepaintBoundary? boundray = imgkey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
@@ -22,6 +22,9 @@ InkWell save() {
       imgdata = bytedata!.buffer.asUint8List();
       ImageGallerySaver.saveImage(imgdata!,
           name: 'poster', quality: 100);
+
+
+      print('Hello dostoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo');
 
     },
     child: const Column(
