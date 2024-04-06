@@ -16,7 +16,7 @@ class _History_PageState extends State<History_Page> {
           color: Colors.red,
           child: Row(
 
-            // crossAxisAlignment: CrossAxisAlignment.end,
+
             children: [
                         Text('Hello',style: TextStyle(color: Colors.black,fontSize: 40),)
           ],),
