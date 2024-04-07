@@ -155,7 +155,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
               // Alignment container
               Container(
                 height: 230,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Color(0xff1c2438),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
