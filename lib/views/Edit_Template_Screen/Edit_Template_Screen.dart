@@ -137,8 +137,8 @@ class _edit_template_screenState extends State<edit_template_screen> {
           IndexedStack(
             index: posteditindex,
             children: [
-              canvas(), // 0
-              text(), // 1
+              canvas(), // index = 0
+              text(), // index = 1
               Container(
                 height: 100,
                 color: Colors.blue,
@@ -150,9 +150,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
               ),
               background(), //4
               backgroundcolors(), // 5
-              textfield(), // 6
-
-              // Alignment container
+              textfield(), // 6 // Alignment container
               Container(
                 height: 230,
                 padding: const EdgeInsets.all(10),
@@ -734,4 +732,5 @@ class _edit_template_screenState extends State<edit_template_screen> {
       ),
     );
   }
+
 }

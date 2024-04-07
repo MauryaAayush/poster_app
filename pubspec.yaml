@@ -72,6 +72,14 @@ flutter:
     - assets/images/Diwali/
     - assets/images/Makar sankranti/
     - assets/images/Dussera/
+    - assets/images/navratri/
+    - assets/images/rakshabandhan/
+    - assets/images/ganesh/
+    - assets/images/holi/
+    - assets/images/independence/
+    - assets/images/janmashtami/
+    - assets/images/vasant panchami/
+    - assets/images/mahashivratri/
     - assets/gifs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
