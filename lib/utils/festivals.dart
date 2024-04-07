@@ -79,17 +79,17 @@ List festivalList=[
   },
 
 
-  {
-    'Festival name' : 'Basant Panchami',
-    'Text': 'Create your Basant Panchami Templates',
-    'Images' : 'assets/images/6.jpeg',
-    'Color' : Colors.amber,
-    'image' : [
-    'assets/images/navratri/navratri 1.jpeg',
-    'assets/images/navratri/navratri 2.jpeg',
-    'assets/images/navratri/navratri 3.jpeg',
-  ]
-  },
+  // {
+  //   'Festival name' : 'Basant Panchami',
+  //   'Text': 'Create your Basant Panchami Templates',
+  //   'Images' : 'assets/images/6.jpeg',
+  //   'Color' : Colors.amber,
+  //   'image' : [
+  //   'assets/images/navratri/navratri 1.jpeg',
+  //   'assets/images/navratri/navratri 2.jpeg',
+  //   'assets/images/navratri/navratri 3.jpeg',
+  // ]
+  // },
 
 
   {
