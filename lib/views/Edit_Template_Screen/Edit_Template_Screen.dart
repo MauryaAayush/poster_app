@@ -201,14 +201,14 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                 },
                                 child: alignmenttop(),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 12,
                                   ),
                                   InkWell(
@@ -220,7 +220,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                     },
                                     child: alignmentleft(),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 38,
                                   ),
                                   InkWell(
@@ -234,7 +234,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               InkWell(
