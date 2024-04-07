@@ -86,10 +86,10 @@ class _edit_template_screenState extends State<edit_template_screen> {
                                       festivalList[postviewIndex]['image']
                                           [backgroungindex],
                                     )
-                                  : AssetImage(''),
+                                  : const AssetImage(''),
                               fit: BoxFit.fill,
                             ),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 color: Color(0xff1c2438),
                                 blurRadius: 0.5,
