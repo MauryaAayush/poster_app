@@ -156,7 +156,7 @@ class _edit_template_screenState extends State<edit_template_screen> {
               Container(
                 height: 230,
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xff1c2438),
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
