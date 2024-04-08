@@ -28,6 +28,11 @@ class edit_template_screen extends StatefulWidget {
 }
 
 class _edit_template_screenState extends State<edit_template_screen> {
+  void toggleWidgetState(){
+    setState(() {
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     // double height = MediaQuery.of(context).size.height;
@@ -322,21 +327,9 @@ class _edit_template_screenState extends State<edit_template_screen> {
                   },
                   child: textedit(),
                 ),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        print('hello');
-                        posteditindex = 2;
-                      });
-                    },
-                    child: save()),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        posteditindex = 3;
-                      });
-                    },
-                    child: share()),
+
+               save(toggleState: toggleWidgetState),
+               share(toggleState: toggleWidgetState),
               ],
             ),
           ),

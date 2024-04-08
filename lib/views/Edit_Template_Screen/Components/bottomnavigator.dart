@@ -9,11 +9,11 @@ import 'package:path_provider/path_provider.dart';
 import 'package:poster_app/utils/All_Variables.dart';
 import 'package:share_extend/share_extend.dart';
 
-InkWell save() {
+InkWell save({required VoidCallback toggleState}) {
   return InkWell(
     onTap: () async {
-      // posteditindex = 2;
-
+      posteditindex = 2;
+      toggleState();
       RenderRepaintBoundary? boundray = imgkey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
       ui.Image image = await boundray.toImage();
@@ -44,9 +44,11 @@ InkWell save() {
 }
 
 
-InkWell share() {
+InkWell share({required VoidCallback toggleState}) {
   return InkWell(
     onTap: () async {
+      posteditindex = 3;
+      toggleState();
       RenderRepaintBoundary? boundray = imgkey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
       ui.Image image = await boundray.toImage();
