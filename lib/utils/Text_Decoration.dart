@@ -10,7 +10,7 @@ List TextEditingControllerlist=[];
 TextEditingController txtname = TextEditingController(text: ' ');
 double fontofsize =15;
 List Colorlist =[
-  Colors.teal,
+  Colors.white,
   Colors.red,
   Colors.blue,
   Colors.green,
@@ -20,6 +20,8 @@ List Colorlist =[
   Colors.yellowAccent,
   Colors.cyan,
   Colors.orange,
+  Colors.deepPurple,
+  Colors.pinkAccent
 ];
 int textcolorindex=0;
 List textfamily = [
