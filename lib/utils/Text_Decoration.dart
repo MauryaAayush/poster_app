@@ -37,4 +37,4 @@ List textfamily = [
   GoogleFonts.poppins,
   GoogleFonts.workbench,
 ];
-int textfontfamilyindex =0;
+int textfontfamilyindex = 0;
